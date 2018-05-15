@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>robotcar</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <!-- Worthwhile to let them try using the grid system to make them understand how this thing works -->
+            <div class="col-lg-6 col-md-12">
+                <div class="row">
+                    <button class="btn btn-default offset-lg-4 col-lg-4 offset-md-4 col-md-4 controller" onclick="movecar('up')">
+                        <span class="fas fa-caret-up fa-10x"></span>
+                    </button>
+                </div>
+                <div class="row ">
+                    <button class="btn btn-default col-lg-4 col-md-4" onclick="movecar('left')">
+                        <span class="fas fa-caret-left fa-10x "></span>
+                    </button>
+                    <button class="btn btn-default offset-lg-4 col-lg-4 offset-md-4 col-md-4" onclick="movecar('right')">
+                        <span class="fas fa-caret-right fa-10x "></span>
+                    </button>
+                </div>
+                <div class="row ">
+                    <button class="btn btn-default offset-lg-4 col-lg-4 offset-md-4 col-md-4" onclick="movecar('down')">
+                        <span class="fas fa-caret-down fa-10x "></span>
+                    </button>
+                </div>
+            </div>
+            <div class="offset-lg-2 col-lg-4 col-md-12">
+                <button class="btn btn-default col-lg-12 ">Move forward 5 times</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script type='text/javascript'>
+        function movecar(direction) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.open("GET", "http://localhost:8080/" + direction, true);
+            xhttp.send();
+        }
+    </script>
+</body>
+
+</html>
